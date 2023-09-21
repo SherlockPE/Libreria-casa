@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:24:20 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/19 13:03:46 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:22:46 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	big = (char *)haystack;
 	small = (char *)needle;
-
 	i = 0;
 	if (needle[0] == '\0')
 		return (big);
@@ -32,7 +31,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		j = 0;
 		while (big[i] == small[j])
-		{	
+		{
 			i++;
 			j++;
 			if (small[j] == '\0')
@@ -43,8 +42,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-/* 
-int main(void)
+/*
+int	main(void)
 {
 	const char	*pajar;
 	const char	*aguja;
