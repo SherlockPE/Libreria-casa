@@ -3,31 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/20 17:36:01 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/25 11:37:04 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *ch;
-	
+	char	*ch;
+
 	ch = malloc(sizeof(char *));
 	*ch = n + 48;
-	
+
 	return (*&ch);
 }
 
-/* int main(void)
+/* int	main(void)
 {
-	int	number = 9;
-	printf("%s", ft_itoa(number));
-	
-	return 0;
+	int	number;
+
+	number = 9;
+	printf ("%s", ft_itoa(number));
+
+	return (0);
 }
  */

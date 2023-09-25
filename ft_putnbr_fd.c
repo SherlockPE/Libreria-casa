@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:57:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/24 10:59:22 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/25 12:06:27 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,28 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	minus;
+	char	result;
+	long	number;
 
-	minus = '-';
-
-	if (n < 0)
+	number = (long) n;
+	if (number < 0)
 	{
-		write(fd, &minus, 1);
-		n *= -1;
+		write(fd, "-", 1);
+		number = -number;
 	}
-	if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		n = (n % 10) + 48;
-	}
-	write(fd, &n, 1);
+	if (number > 9)
+		ft_putnbr_fd(number / 10, fd);
+	result = (number % 10) + '0';
+	write(fd, &result, 1);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int	number;
 
-	number = -1;
+	number = -123234564;
 	ft_putnbr_fd(number, 1);
 	return (0);
 }
-
+ */
 // n = -1234
