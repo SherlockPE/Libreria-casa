@@ -6,11 +6,10 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:50 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/25 12:23:05 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:15:21 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    
 }

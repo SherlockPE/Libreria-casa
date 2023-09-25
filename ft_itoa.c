@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/25 11:37:04 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:14:32 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_itoa(int n)
 
 	ch = malloc(sizeof(char *));
 	*ch = n + 48;
-
 	return (*&ch);
 }
 

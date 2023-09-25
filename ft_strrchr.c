@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 13:15:06 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/25 13:45:14 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:15:44 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	size = ft_strlen(s);
 	if (c == 0)
-		return((char *)&(s[size + 1]));
-
+		return ((char *)&(s[size + 1]));
 	while (size--)
 	{
 		if (s[size] == c)
