@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:57:30 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/16 18:45:51 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:59:58 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,23 @@
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t des)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < des)
+	j = 0;
+	while (src[j])
+		j++;
+	if (des == 0)
+		return (j);
+	while (src[i] && i < (des - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (j);
 }
-/*
+/* 
 #include <stdio.h>
 
 int	main(void)
