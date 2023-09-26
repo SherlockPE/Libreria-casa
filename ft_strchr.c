@@ -6,37 +6,39 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:17:49 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/26 13:48:53 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:10:43 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*ptr;
-	int		size;
+	int	i;
 
 	i = 0;
-	size = ft_strlen(s);
-	ptr = (char *)s;
-	if (c == 0)
-		return (&ptr[size]);
-	while (s[i] != '\0' && s[i] != c)
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 		i++;
-	if (i == size)
+	}
+	if (s[i] != (unsigned char)c)
 		return (0);
-	return (&ptr[i]);
+	return ((char *)&s[i]);
 }
 
-// int main () {
-//    const char str[] = "This is just a String";
-//    const char ch = 'j';
-//    char *p;
-//    p = ft_strchr(str, ch);
+/* int	main(void)
+{
+	const char	str[];
+	const char	ch;
+	char		*p;
 
-//    printf("String starting from '%c' is: %s", ch, p);
-//    return (0);
-// }
+	str[] = "This is just a String";
+	ch = 'j';
+	p = ft_strchr(str, ch);
+	printf("String starting from '%c' is: %s", ch, p);
+	return (0);
+}
+ */
