@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:24:20 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/21 13:22:46 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:50:47 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (0);
 }
 
-/*
+
+
+
+
+
+
 int	main(void)
 {
 	const char	*pajar;
@@ -50,10 +55,9 @@ int	main(void)
 	char		*ptr;
 
 	// char *pajar = "qwerty qwerty qwerty qwerty asdf qwerty qwerty";
-	pajar = "12345asdf qwerty qwerty";
-	aguja = "";
-	ptr = ft_strnstr(pajar, aguja, 11);// asdf qwerty qwerty
+	pajar = "abcdef";
+	aguja = "abcdefghijklmnop";
+	ptr = ft_strnstr(pajar, aguja, 5);// asdf qwerty qwerty
 	printf("%s", ptr);
 	return (0);
 }
- */
