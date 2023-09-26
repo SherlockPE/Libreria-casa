@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:24:20 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/26 17:50:47 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:34:29 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,45 +19,35 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	char	*big;
-	char	*small;
 
-	big = (char *)haystack;
-	small = (char *)needle;
 	i = 0;
 	if (needle[0] == '\0')
-		return (big);
-	while (len--)
+		return ((char *)haystack);
+	while (haystack[i] && len > i)
 	{
 		j = 0;
-		while (big[i] == small[j])
+		while ((haystack[i + j] == needle[j]) && (len > i + j) && haystack[i + j])
 		{
-			i++;
 			j++;
-			if (small[j] == '\0')
-				return (big + (i - ft_strlen(needle)));
 		}
+		if (needle[j] == '\0')
+			return ((char *)haystack + i);
 		i++;
 	}
 	return (0);
 }
 
-
-
-
-
-
-
-int	main(void)
+/* int	main(void)
 {
 	const char	*pajar;
 	const char	*aguja;
 	char		*ptr;
 
 	// char *pajar = "qwerty qwerty qwerty qwerty asdf qwerty qwerty";
-	pajar = "abcdef";
-	aguja = "abcdefghijklmnop";
-	ptr = ft_strnstr(pajar, aguja, 5);// asdf qwerty qwerty
+	aguja = "abc";
+	pajar = "123456abcdefghijklmnop";
+	ptr = ft_strnstr(pajar, aguja, 9);// asdf qwerty qwerty
 	printf("%s", ptr);
 	return (0);
 }
+ */
