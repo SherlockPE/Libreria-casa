@@ -6,43 +6,40 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 18:15:27 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/26 14:28:17 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:17:41 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
+	size_t	size_src;
+	size_t	size_dst;
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	size_src = 0;
+	size_dst = 0;
+
+	while(src[size_src])
+		size_src++;
+	while(dst[size_dst])
+		size_dst++;
+
+	i = size_dst;
 	j = 0;
-	while (dst[i] != '\0')
-		i++;
-	while (j < dstsize)
+
+	if (size_dst >= dstsize || dstsize == 0)
+		return (size_src + dstsize);
+	while (src[j] && j < dstsize - size_dst - 1)
 	{
 		dst[i] = src[j];
 		i++;
 		j++;
 	}
 	dst[i] = '\0';
-	return (i);
+	return (size_dst + size_src);
 }
-/*
-int	main(void)
-{
-	char	*source;
-	char	*dest;
-
-	source = "123456789";
-	dest = malloc(20);
-	ft_strlcpy(dest, "holi", 4);
-	printf("%s", dest);
-	strlcat(dest, source, 5);
-	printf("%s", dest);
-	return (0);
-}
- */
