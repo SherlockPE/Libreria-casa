@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:07:17 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/16 19:30:55 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 17:36:10 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,32 @@ char	*ft_strdup(const char *s1)
 {
 	int		size;
 	int		i;
-	void	*new;
+	char	*new;
 
-	size = ft_strlen(s1);
 	i = 0;
-	new = malloc(size);
+	size = ft_strlen(s1);
+	new = (char *)malloc(size + 1);
+	if (!new)
+		return (0);
 	while (i < size)
 	{
-		ft_strlcpy(new, s1, size);
+		new[i] = s1[i];
 		i++;
 	}
+	new[i] = '\0';
+
+	
 	return (new);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
 	char	*word;
+	char	*ptr;
 
 	word = "12345";
-	ft_strdup(word);
-	printf("%d", (int)ft_strlen(word));
+	ptr = ft_strdup(word);
+	printf("%s", ptr);
 	return (0);
 }
  */
