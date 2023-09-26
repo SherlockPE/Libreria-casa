@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:17:49 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/25 15:26:41 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:48:53 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ char	*ft_strchr(const char *s, int c)
 		return (&ptr[size]);
 	while (s[i] != '\0' && s[i] != c)
 		i++;
+	if (i == size)
+		return (0);
 	return (&ptr[i]);
 }
 
-/* int main () {
-   const char str[] = "This is just a String";
-   const char ch = 'j';
-   char *p;
-   p = ft_strchr(str, ch);
+// int main () {
+//    const char str[] = "This is just a String";
+//    const char ch = 'j';
+//    char *p;
+//    p = ft_strchr(str, ch);
 
-   printf("String starting from '%c' is: %s", ch, p);
-   return (0);
-}
- */
+//    printf("String starting from '%c' is: %s", ch, p);
+//    return (0);
+// }

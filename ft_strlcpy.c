@@ -6,13 +6,13 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:57:30 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/25 14:59:58 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:54:08 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t des)
+size_t	ft_strlcpy(char *dst, const char *src, size_t des)
 {
 	size_t	i;
 	size_t	j;
