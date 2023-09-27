@@ -6,14 +6,14 @@
 #    By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 11:30:39 by flopez-r          #+#    #+#              #
-#    Updated: 2023/09/25 17:48:19 by flopez-r         ###   ########.fr        #
+#    Updated: 2023/09/27 15:49:04 by flopez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
 		ft_memcpy.c ft_memmove.c \
-		ft_memcmp.c ft_memset.c ft_putchr_fd.c \
+		ft_memcmp.c ft_memset.c ft_putchar_fd.c \
 		ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
 		ft_strdup.c ft_striteri.c ft_strlcat.c ft_strlcpy.c \
 		ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strnstr.c \
