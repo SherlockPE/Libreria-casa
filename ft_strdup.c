@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:07:17 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/26 17:36:10 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:34:00 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ char	*ft_strdup(const char *s1)
 		i++;
 	}
 	new[i] = '\0';
-
-	
 	return (new);
 }
 

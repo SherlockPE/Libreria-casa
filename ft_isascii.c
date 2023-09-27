@@ -6,17 +6,17 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:47:45 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/14 10:05:40 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:24:34 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isacci(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
-		return (c);
-	else
-		return (0);
+		return (1);
+	return (0);
 }
+
 // #include <stdio.h>
 // int main(void)
 // {
