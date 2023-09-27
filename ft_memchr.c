@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:23:00 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/09/19 13:03:13 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:43:40 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,21 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*string;
 
 	i = 0;
 	string = (unsigned char *)s;
-	while (n--)
+	while (i < n)
 	{
-		while (string[i] != c)
-			i++;
-		return (&string[i]);
+		if (string[i] == (unsigned char)c)
+			return (&string[i]);
+		i++;
 	}
 	return (0);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
 	char *string = "Hola que .tal cómo estás?";
 	char needle = '.';
