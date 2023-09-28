@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/27 17:01:19 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:36:46 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,33 @@
 #include <stdio.h>
 #include "libft.h"
 
+char	*ft_itoa(int n)
+{
+	
+}
+
+int	main(void)
+{
+	char	*str;
+	int		n;
+
+	n = -12345;
+	str = ft_itoa(n);
+	
+	if (str == NULL)
+		printf("Error en la asignación de memoria");
+	printf("Todo bien, todo correctol\n");
+	printf("El valor %d fue convertido y asignado a str: %s\n", n, str);
+	printf("Dirección de memoria: %p\n", &str);
+	free(str);
+}
+
 /* char	*ft_itoa(int n)
 {
 	// char	result;
 	long	number;
 	int		size;
-
+	(\
 	number = (long) n;
 	size = 0;
 	while (number / 10)
@@ -38,7 +59,7 @@
 // char	*final;
 } */
 
-int	main(void)
+/* int	main(void)
 {
 	int		n;
 	char	*result;
@@ -71,3 +92,4 @@ int	main(void)
 
 	return (0);
 }
+ */
