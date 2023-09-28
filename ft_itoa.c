@@ -6,7 +6,7 @@
 /*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/28 16:23:27 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/28 16:33:06 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ char	*ft_itoa(int n)
 		symbol = -symbol;
 		mem_symbol = 1;
 	}
-	
 	//Number of digits of n
-	//12345
 	size = 0;
 	temp_n = n * symbol;
 	while (temp_n != 0)
@@ -40,38 +38,27 @@ char	*ft_itoa(int n)
 		temp_n = temp_n / 10;
 		size++;
 	}
-	
 	//Asignación de memory y control de error por si Falla la asignación de memoria:
 	string = malloc(size + mem_symbol + 1);
 	if (string == NULL)
 		return (NULL);
-	
-	//4
+	//Rellenar la memoria
 	temp_n = n * symbol;
-	// position = size - mem_symbol;
-	// position = size + mem_symbol + 1;
 	position = size + mem_symbol;
 	string[position] = '\0';
 	position -= 1;
 	while (0 < position)
 	{
-		// if (mem_symbol == 1)
-		// 	string[0] = '-';
 		if (mem_symbol == 1)
 		{
 			string[0] = '-';
 			mem_symbol == 0;
 		}
-		// temp_n = temp_n / 10;
-		// string[position] = (temp_n % 10) + '0';
 		string[position] = (temp_n % 10) + '0';
 		temp_n = temp_n / 10;
 		position--;
 	}
 	return (string);
-	// n = 12345
-	// temp_n = 1
-	//'-','1',2','3','4','5','\0'
 }
 
 int	main(void)
@@ -89,6 +76,23 @@ int	main(void)
 	printf("Dirección de memoria: %p\n", &str);
 	free(str);
 }
+
+// Comentarios:
+//Symbol negative or positivo
+//Number of digits of n
+//12345
+//Asignación de memory y control de error por si Falla la asignación de memoria:
+// position = size - mem_symbol;
+// position = size + mem_symbol + 1;
+// if (mem_symbol == 1)
+// 	string[0] = '-';
+// temp_n = temp_n / 10;
+// string[position] = (temp_n % 10) + '0';
+// n = 12345
+// temp_n = 1
+//'-','1',2','3','4','5','\0'
+
+
 	// Necesito:
 	
 	// 	1.-Comprobar si es negativo o positivo
@@ -126,7 +130,7 @@ int	main(void)
 
 // char	*final;
 } */
-
+// digitos??
 /* int	main(void)
 {
 	int		n;
