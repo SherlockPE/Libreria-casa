@@ -6,11 +6,11 @@
 /*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/28 15:57:04 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/28 16:23:27 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 char	*ft_itoa(int n)
@@ -48,15 +48,24 @@ char	*ft_itoa(int n)
 	
 	//4
 	temp_n = n * symbol;
-	position = size - mem_symbol;
+	// position = size - mem_symbol;
+	// position = size + mem_symbol + 1;
+	position = size + mem_symbol;
 	string[position] = '\0';
 	position -= 1;
 	while (0 < position)
 	{
+		// if (mem_symbol == 1)
+		// 	string[0] = '-';
 		if (mem_symbol == 1)
+		{
 			string[0] = '-';
-		temp_n = temp_n / 10;
+			mem_symbol == 0;
+		}
+		// temp_n = temp_n / 10;
+		// string[position] = (temp_n % 10) + '0';
 		string[position] = (temp_n % 10) + '0';
+		temp_n = temp_n / 10;
 		position--;
 	}
 	return (string);
