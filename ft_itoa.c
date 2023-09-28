@@ -6,13 +6,13 @@
 /*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/28 16:33:06 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/28 21:25:38 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-
+/* 
 char	*ft_itoa(int n)
 {
 	int		symbol;
@@ -52,7 +52,7 @@ char	*ft_itoa(int n)
 		if (mem_symbol == 1)
 		{
 			string[0] = '-';
-			mem_symbol == 0;
+			mem_symbol = 0;
 		}
 		string[position] = (temp_n % 10) + '0';
 		temp_n = temp_n / 10;
@@ -75,7 +75,7 @@ int	main(void)
 	printf("El valor %d fue convertido y asignado a str: %s\n", n, str);
 	printf("Dirección de memoria: %p\n", &str);
 	free(str);
-}
+} */
 
 // Comentarios:
 //Symbol negative or positivo
