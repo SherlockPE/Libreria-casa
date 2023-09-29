@@ -6,66 +6,66 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/29 13:34:23 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:26:05 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-
-
-char	*ft_itoa(int n)
+void    *fill(char *str, long n, int size)
 {
-	// 1.- contar caracteres antes de asignar el malloc
-
-	int		symbol;
-	int		temp_n;
-	int		size;
-	int		mem_symbol;
-	char	*string;
-	int		position;
-
-	//Symbol negative or positivo
-	mem_symbol = 0;
-	symbol = 1;
-	if (n < 0)
-	{
-		symbol = -symbol;
-		mem_symbol = 1;
-	}
-	//Number of digits of n
-	size = 0;
-	temp_n = n * symbol;
-	while (temp_n != 0)
-	{
-		temp_n = temp_n / 10;
-		size++;
-	}
-	//Asignación de memory y control de error por si Falla la asignación de memoria:
-	string = malloc(size + mem_symbol + 1);
-	if (string == NULL)
-		return (NULL);
-	//Rellenar la memoria
-	temp_n = n * symbol;
-	position = size + mem_symbol;
-	string[position] = '\0';
-	position -= 1;
-	while (0 < position)
-	{
-		if (mem_symbol == 1)
-		{
-			string[0] = '-';
-			mem_symbol = 0;
-		}
-		string[position] = (temp_n % 10) + '0';
-		temp_n = temp_n / 10;
-		position--;
-	}
-	return (string);
+    if (n < 0)
+    {
+        n *= -1;
+        str[0] = '-';
+        while (size)
+        {
+            str[size--] = (n % 10) + '0';
+            n /= 10;
+        }
+    }
+    else
+    {
+        while (size)
+        {
+            str[--size] = (n % 10) + '0';
+            n /= 10;
+        }
+    }
+    return (str);
 }
-/* 
-int	main(void)
+
+char    *ft_itoa(int n)
+{
+    int        temp_n;
+    int        size;
+    char    *string;
+	long	n_long;
+
+	n_long = (long)n;
+	if (n_long == 0)
+	{
+		string = (char *)calloc(2, 1);
+		string[0] = '0';
+		return (string);
+	}
+    size = 0;
+    temp_n = n_long;
+    while (temp_n != 0 && ++size)
+        temp_n /= 10;
+    if (n_long < 0)
+        string = (char *)calloc(size + 2, 1);
+    else
+        string = (char *)calloc(size + 1, 1);
+    if (!string)
+        return (0);
+    fill(string, n_long, size);
+    return (string);
+}
+
+/* int	main(void)
 {
 	char	*str;
 	int		n;
@@ -80,92 +80,3 @@ int	main(void)
 	printf("Dirección de memoria: %p\n", &str);
 	free(str);
 } */
-
-// Comentarios:
-//Symbol negative or positivo
-//Number of digits of n
-//12345
-//Asignación de memory y control de error por si Falla la asignación de memoria:
-// position = size - mem_symbol;
-// position = size + mem_symbol + 1;
-// if (mem_symbol == 1)
-// 	string[0] = '-';
-// temp_n = temp_n / 10;
-// string[position] = (temp_n % 10) + '0';
-// n = 12345
-// temp_n = 1
-//'-','1',2','3','4','5','\0'
-
-
-	// Necesito:
-	
-	// 	1.-Comprobar si es negativo o positivo
-	// 		1a.-Tener una variable que me ayude a la asignación de memoria por
-	// 			si es o no negativo
-	// 	2.- Saber cuántos dígitos tiene la string para asignar el espacio
-	// 		correcto de memoria
-	// 	3.-Asignar la memoria
-	// 		3a.-Asignar un byte más de memoria por si es negativo
-	//		3b.- Devolver NULL por si falla
-	// 	4.-Convertir cada digito a char y pasarlo a la memoria creada
-	// 		4a.- Tengo que arregar el valor nulo?
-	// 	5.-Devolver la string o NULL si falla la reserva de memoria
-
-/* char	*ft_itoa(int n)
-{
-	// char	result;
-	long	number;
-	int		size;
-	(\
-	number = (long) n;
-	size = 0;
-	while (number / 10)
-		size++;
-	printf("%d", size);
-	// if (number < 0)
-	// {
-	// 	//escribir el -
-	// 	number = -number;
-	// }
-	// if (number > 9)
-	// 	ft_itoa(number / 10);
-	// result = (number % 10) + '0';
-	//devolver valor
-
-// char	*final;
-} */
-// digitos??
-/* int	main(void)
-{
-	int		n;
-	char	*result;
-	long	number;
-	int		size;
-	char	*ptr;
-	int		i;
-
-	number = (long) n;
-	n = 974;
-
-	i = 0;
-	size = 0;
-	while (number)
-	{
-		number /= 10;
-		size++;
-	}
-	ptr = malloc(size);
-	while (size--)
-	{
-		ptr[i] += number / 10;
-	}
-	printf("%s", ptr);
-
-	// int	number;
-
-	// number = 978;
-	// // printf ("%s", ft_itoa(number));
-
-	return (0);
-}
- */
