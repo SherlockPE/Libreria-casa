@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:53:20 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/28 21:25:38 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/29 13:34:23 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
-/* 
+
+
+
 char	*ft_itoa(int n)
 {
+	// 1.- contar caracteres antes de asignar el malloc
+
 	int		symbol;
-	int 	temp_n;
+	int		temp_n;
 	int		size;
 	int		mem_symbol;
 	char	*string;
@@ -60,7 +64,7 @@ char	*ft_itoa(int n)
 	}
 	return (string);
 }
-
+/* 
 int	main(void)
 {
 	char	*str;
@@ -68,7 +72,7 @@ int	main(void)
 
 	n = -12345;
 	str = ft_itoa(n);
-	
+
 	if (str == NULL)
 		printf("Error en la asignación de memoria");
 	printf("Todo bien, todo correctol\n");

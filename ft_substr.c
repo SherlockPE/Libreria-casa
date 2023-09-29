@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:46:56 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/09/28 23:42:05 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/09/29 13:24:45 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*new_string;
 	size_t		i;
-	
-	if (s == NULL)
-		return (NULL);
+
+	if (s == 0)
+		return (0);
 	i = ft_strlen(s);
-	
-	if (len > i)
+	if (start >= i)
 	{
-		new_string = malloc(1);
-		if (new_string == NULL)
-			return (NULL);
+		new_string = ft_calloc(1, 1);
 		return (new_string);
 	}
-
-	new_string = malloc(len + 1);
-	if (new_string == NULL)
-		return (NULL);
-
+	else if (i - start < len)
+		new_string = ft_calloc((i - start) + 1, 1);
+	else
+		new_string = ft_calloc(len + 1, 1);
+	if (new_string == 0)
+		return (0);
 	i = 0;
-	while (i < len)
+	while (i < len && s[start])
 		new_string[i++] = s[start++];
-	new_string[i] = '\0';
-
 	return (new_string);
 }
 
