@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:43:43 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/10/02 14:48:39 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:09:41 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 t_list 	*ft_lstnew(void *content);
 void 	ft_lstadd_front(t_list **lst, t_list *new);
 int 	ft_lstsize(t_list *lst);
-
+t_list 	*ft_lstlast(t_list *lst);
+void 	ft_lstadd_back(t_list **lst, t_list *new);
 #endif
