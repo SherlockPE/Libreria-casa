@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:43:43 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/10/02 13:04:39 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:14:59 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 t_list 	*ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
 #endif
