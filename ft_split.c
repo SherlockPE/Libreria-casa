@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:52:46 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/10/03 11:38:35 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/03 11:54:23 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,17 @@ char    **ft_split(char const *s, char c)
 {
     int        cant_words;
     int        i;
-    int        memory;
     int        start;
     char       **array;
 
-    //Contar cantidad de palabras
-    cant_words = n_words(s, c);
-
-    //Asignar memoria a la primera dimesión de arrays
-    array = (char **)malloc((cant_words + 1) * 8);//*8 -> espacio de memoria de un doble puntero es de 8 bytes
+    cant_words = n_words((char *)s, c);
+    array = (char **)ft_calloc((cant_words + 1) * 8, 1);
     if (!array)
         return (0);
-    
-    //Rellenar substrings
     i = 0;
-    start = 0;
-    memory = 0;
     while (s[i])
     {
-        while (s[i] == c)
-            i++;
+        while (s[i++] == c)
         start = i;
         while (s[i] != c && s[i])
         {
@@ -71,9 +62,10 @@ char    **ft_split(char const *s, char c)
             }
         }
     }
+	return (array);
 }
-
+/* 
 int	main(void)
 {
 	ft_split(",,h,ola,,,,q,ue,ta,l", ',');
-}
+} */
