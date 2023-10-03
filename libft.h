@@ -6,13 +6,14 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:43:43 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/10/02 17:55:13 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:25:48 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stddef.h>
 # include <stdlib.h>
 
 typedef struct s_list
@@ -62,4 +63,6 @@ int 	ft_lstsize(t_list *lst);
 t_list 	*ft_lstlast(t_list *lst);
 void 	ft_lstadd_back(t_list **lst, t_list *new);
 void 	ft_lstdelone(t_list *lst, void (*del)(void *));
+void 	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 #endif

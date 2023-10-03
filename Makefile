@@ -6,7 +6,7 @@
 #    By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 11:30:39 by flopez-r          #+#    #+#              #
-#    Updated: 2023/10/02 17:54:45 by flopez-r         ###   ########.fr        #
+#    Updated: 2023/10/02 19:04:59 by flopez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_strmapi.c ft_strtrim.c\
 		ft_strrchr.c ft_tolower.c ft_toupper.c ft_strjoin.c ft_substr.c
 BNS_SRCS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 # BNS_SRCS =	ft_lstadd_front.c ft_lstlast.c ft_lstnew.c ft_lstsize.c
 # 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
