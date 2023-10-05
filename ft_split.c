@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:52:46 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/10/05 13:54:42 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/05 14:43:17 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	n_words(char *s, int c)
 	return (cant_w);
 }
 
-void* free_split(char **array, int max)
+void	*free_split(char **array, int max)
 {
-	int index;
+	int	index;
 
 	index = 0;
 	while (index < max)
