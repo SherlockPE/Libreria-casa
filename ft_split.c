@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:52:46 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/10/05 14:43:17 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/05 15:43:03 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	n_words(char *s, int c)
+static int	n_words(char *s, int c)
 {
 	int	i;
 	int	cant_w;
@@ -35,7 +35,7 @@ int	n_words(char *s, int c)
 	return (cant_w);
 }
 
-void	*free_split(char **array, int max)
+static void	*free_split(char **array, int max)
 {
 	int	index;
 
@@ -49,7 +49,7 @@ void	*free_split(char **array, int max)
 	return (NULL);
 }
 
-char	**fill(char *s, char c, char **array)
+static char	**fill(char *s, char c, char **array)
 {
 	int	i;
 	int	start;
