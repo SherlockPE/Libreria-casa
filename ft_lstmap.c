@@ -5,43 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 14:35:00 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/10/03 15:53:45 by flopez-r         ###   ########.fr       */
+/*   Created: 2023/10/05 13:06:04 by flopez-r          #+#    #+#             */
+/*   Updated: 2023/10/05 13:08:47 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "libft.h"
+
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst || !del)
-		return (0);	
-	
-	t_list *new_list;
+	//nueva lista a retornar
+	t_list *resultado;
 
-	new_list = 0;
+	//temporal por si falla la memoria
+	t_list *temporal;
+
+	if (!lst || !f)
+		return (0);
 
 	while (lst)
 	{
-		new_list->content = (t_list *)malloc(sizeof(lst));
-		if (!new_list->content)
+		temporal = ft_lstnew(f(lst->content));
+		if (!temporal)
+		{
+			ft_lstclear(resultado, del);
 			return (0);
-		lst->content = new_list->content;
-		lst->next = new_list->next;
+		}
+		ft_lstadd_back(resultado, temporal);
+		temporal = temporal->next;
 		lst = lst->next;
 	}
-
-	//Itera la lista y aplica cada función
-	while (new_list)
-	{
-		f(new_list->content);
-		new_list = new_list->next;
-	}
-
-	return (new_list);
+	return (resultado);
 }
 
-int	main(void)
+/* /* int	main(void)
 {
 	t_list *cabecera;
 	t_list	*item1;
@@ -60,3 +60,5 @@ int	main(void)
 	item3->next = item4;
 	item4->next = 0;
 }
+
+ */

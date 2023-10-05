@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/25 11:30:39 by flopez-r          #+#    #+#              #
-#    Updated: 2023/10/03 15:15:42 by flopez-r         ###   ########.fr        #
+#    Created: 2023/10/05 13:08:07 by flopez-r          #+#    #+#              #
+#    Updated: 2023/10/05 13:08:09 by flopez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
