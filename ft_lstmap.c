@@ -6,42 +6,35 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:06:04 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/10/05 13:08:47 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:26:44 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
 
-
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	//nueva lista a retornar
-	t_list *resultado;
+	t_list	*resultado;
+	t_list	*temporal;
 
-	//temporal por si falla la memoria
-	t_list *temporal;
-
+	resultado = 0;
 	if (!lst || !f)
 		return (0);
-
 	while (lst)
 	{
 		temporal = ft_lstnew(f(lst->content));
 		if (!temporal)
 		{
-			ft_lstclear(resultado, del);
+			ft_lstclear(&resultado, del);
 			return (0);
 		}
-		ft_lstadd_back(resultado, temporal);
-		temporal = temporal->next;
+		ft_lstadd_back(&resultado, temporal);
 		lst = lst->next;
 	}
 	return (resultado);
 }
 
-/* /* int	main(void)
+/* int	main(void)
 {
 	t_list *cabecera;
 	t_list	*item1;
@@ -60,5 +53,4 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	item3->next = item4;
 	item4->next = 0;
 }
-
  */
